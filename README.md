@@ -15,8 +15,7 @@ their APIs, this package doesn’t use the wonderful
 [`{beekeeper}`](https://beekeeper.api2r.org/) package to generate the
 API wrappers.
 
-Instead it uses ad-hoc functions that make use of `{httr2}` to make the
-API calls.
+Instead it uses `sf` to make the API calls.
 
 The aim is to be as minimal and easy-to-maintain as possible.
 
