@@ -23,7 +23,7 @@ The goal of ukgeoportal is to provide easy access to the UK's [Geoportal](https:
 usethis::use_description()
 usethis::use_agpl_license()
 usethis::use_r()
-
+devtools::install()
 ```
 
 Because ESRI [doesn't publish OpenAPI compliant .yml files](https://github.com/Esri/geoportal-server/issues/297) describing their APIs, this package  doesn't use the wonderful [`{beekeeper}`](https://beekeeper.api2r.org/) package to generate the API wrappers.
@@ -38,4 +38,11 @@ The history of attempts to gain programmatic access to the Geoportal suggests th
 
 ```{r, eval=FALSE}
 remotes::install_github("robinlovelace/ukgeoportal")
+```
+
+## Example
+
+```{r}
+library(ukgeoportal)
+ukgeo("Combined_Authorities")
 ```
