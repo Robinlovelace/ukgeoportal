@@ -10,7 +10,7 @@
 #'   "/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json")
 #' ukgeo(full_query_string = u1)
 ukgeo = function(
-    layer = "Combined_Authorities",
+    layer = NULL,
     type = "BUC",
     root = "services1.arcgis.com",
     key = "ESMARspQHYMw9BZ9",
