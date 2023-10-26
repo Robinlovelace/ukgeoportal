@@ -9,24 +9,26 @@
 #'   "arcgis/rest/services/Combined_Authorities_December_2022_EN_BFC",
 #'   "/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json")
 #' ukgeo(full_query_string = u1)
+#' # Get endpoint at: https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2023_UK_BUC_V2/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson
+#' ukgeo("Local_Authority_Districts_May_2023_UK_BUC_V2")
 ukgeo = function(
     layer = NULL,
     type = "BUC",
     root = "services1.arcgis.com",
     key = "ESMARspQHYMw9BZ9",
     service = "arcgis/rest/services",
-    layer_full = "Combined_Authorities_December_2022_EN",
+    layer_full = NULL,
     server = "FeatureServer/0",
     query = "where=1%3D1&outFields=*&outSR=4326&f=json",
     endpoint = NULL
 ) {
-  if (!is.null(layer)) {
+  if (is.null(layer_full) ) {
     # Todo: figure out a better way of looking up the full layer based on name:
     if (layer == "Combined_Authorities") {
-      layer_full = "Combined_Authorities_December_2022_EN"
+      layer = "Combined_Authorities_December_2022_EN"
     }
+    layer_full = paste(layer, type, sep = "_")
   }
-  layer_full = paste(layer_full, type, sep = "_")
     endpoint = paste0(
         "https://",
         root,
