@@ -20,9 +20,11 @@ ukgeo = function(
     query = "where=1%3D1&outFields=*&outSR=4326&f=json",
     endpoint = NULL
 ) {
-  # Todo: figure out a better way of looking up the full layer based on name:
-  if (layer == "Combined_Authorities") {
-    layer_full = "Combined_Authorities_December_2022_EN"
+  if (is.null(layer)) {
+    # Todo: figure out a better way of looking up the full layer based on name:
+    if (layer == "Combined_Authorities") {
+      layer_full = "Combined_Authorities_December_2022_EN"
+    }
   }
   layer_full = paste(layer_full, type, sep = "_")
     endpoint = paste0(
